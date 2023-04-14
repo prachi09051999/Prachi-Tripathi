@@ -1,0 +1,190 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Aref Ruqaa";
+}
+body {
+  overflow: hidden;
+  font-family: "Aref Ruqaa";
+}
+ul {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+}
+/* welcome section */
+.welcome {
+  background-color: black;
+  /* background: linear-gradient(180deg, #19401C 0%, rgba(22, 21, 22, 0) 100%); */
+  background: linear-gradient(180deg, #19401c 0%, rgba(0, 0, 0, 1) 100%);
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+.welcome-image {
+  animation: welcomeMovement 2s ease-in forwards;
+  position: absolute;
+}
+/* website logo */
+.logo {
+  position: absolute;
+  animation: logoPopin 2s ease-in forwards, logoPlacement 2s 3s ease-in forwards;
+  z-index: 999;
+}
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 100px;
+  background-color: rgba(0, 0, 0, 0.82);
+  padding: 20px 100px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  opacity: 0;
+  animation: headerPopin 1s 3s ease-in forwards;
+  z-index: 99;
+}
+
+.nav-list {
+  display: flex;
+}
+.nav-item {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 28px;
+  line-height: 44px;
+  color: #fff;
+  text-transform: uppercase;
+  padding: 0 20px;
+}
+
+.homepage-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 120px;
+}
+
+/* info with hii, name, role and description */
+.info {
+  color: rgba(255, 255, 255, 0.91);
+  font-weight: 400;
+  text-transform: capitalize;
+  transform: translateX(-50vw);
+  animation: infoSwipeIn 2s 3s ease-in forwards;
+  width: 40%;
+}
+
+.info .hi {
+  font-size: 80px;
+  line-height: 100px;
+  text-transform: uppercase;
+  font-family: "Alike";
+}
+
+.info .developer-name,
+.info .details {
+  font-family: "Amiri Quran Colored", Times, serif;
+  font-size: 40px;
+  line-height: 50px;
+  color: #a8c172;
+}
+
+.info .details {
+  margin-bottom: 30px;
+}
+
+.info .role {
+  font-size: 40px;
+  line-height: 98px;
+  text-transform: uppercase;
+  font-family: "Alike";
+}
+
+.info .hire-me {
+  color: #fff;
+  background: transparent;
+  border: 2px solid #49814d;
+  padding: 10px 30px;
+  font-family: "Alike";
+  font-size: 40px;
+  line-height: 50px;
+}
+
+.info .hire-me:hover {
+  background: #49814d;
+}
+
+/* banner page image of working lady */
+.working-lady-img {
+  transform: translateX(50vw);
+  animation: imgSwipeIn 2s 3s ease-in forwards;
+  width: 50%;
+}
+
+/* animation to reduce opacity of welcome text */
+@keyframes welcomeMovement {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+/* animation to pop logo into main page */
+@keyframes logoPopin {
+  from {
+    transform: translateY(100vh) scale(0.5);
+  }
+  to {
+    transform: translateY(0vh) scale(1.2);
+  }
+}
+
+/* animation to show header */
+@keyframes headerPopin {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* putting logo to the header */
+@keyframes logoPlacement {
+  from {
+    transform: translateY(0vh) scale(1.2);
+  }
+  to {
+    transform: translate3d(-70vh, -45vh, 0vh) scale(0.2);
+  }
+}
+
+/* swiping main content into home */
+@keyframes infoSwipeIn {
+  from {
+    transform: translateX(-50vw);
+  }
+  to {
+    transform: translateX(0vw);
+  }
+}
+
+/* swiping banner page img*/
+@keyframes imgSwipeIn {
+  from {
+    transform: translateX(50vw);
+  }
+  to {
+    transform: translateX(5vw);
+  }
+}
