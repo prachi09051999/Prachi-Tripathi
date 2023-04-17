@@ -31,9 +31,11 @@ a {
 }
 /* website logo */
 .logo {
-  position: absolute;
-  animation: logoPopin 2s ease-in forwards, logoPlacement 2s 3s ease-in forwards;
+  /* animation: logoPopin 2s ease-in forwards, logoPlacement 2s 3s ease-in forwards; */
   z-index: 999;
+  transform: translate3d(40vw,100vh,0) scale(1);
+  position: relative;
+  animation: logoPopin 2s ease-in forwards, logoPlacement 2s 3s ease-in forwards;
 }
 
 .header {
@@ -45,7 +47,7 @@ a {
   background-color: rgba(0, 0, 0, 0.82);
   padding: 20px 100px;
   display: flex;
-  justify-content: flex-end;
+  justify-content: space-between;
   align-items: center;
   opacity: 0;
   animation: headerPopin 1s 3s ease-in forwards;
@@ -99,12 +101,13 @@ a {
 }
 
 .info .details {
+  line-height: 60px;
   margin-bottom: 30px;
 }
 
 .info .role {
   font-size: 40px;
-  line-height: 98px;
+  line-height: 70px;
   text-transform: uppercase;
   font-family: "Alike";
 }
@@ -159,10 +162,10 @@ a {
 /* animation to pop logo into main page */
 @keyframes logoPopin {
   from {
-    transform: translateY(100vh) scale(0.5);
+    transform: translate3d(40vw,100vh,0) scale(1);
   }
   to {
-    transform: translateY(0vh) scale(1.2);
+    transform: translate3d(40vw,45vh,0) scale(2.5);
   }
 }
 
@@ -179,10 +182,10 @@ a {
 /* putting logo to the header */
 @keyframes logoPlacement {
   from {
-    transform: translateY(0vh) scale(1.2);
+    transform: translate3d(40vw,45vh,0) scale(2.5);
   }
   to {
-    transform: translate3d(-70vh, -45vh, 0vh) scale(0.2);
+    transform: translate3d(0, 0, 0) scale(1);
   }
 }
 
