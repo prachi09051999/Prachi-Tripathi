@@ -33,8 +33,12 @@ a {
 .logo {
   /* animation: logoPopin 2s ease-in forwards, logoPlacement 2s 3s ease-in forwards; */
   z-index: 999;
-  transform: translate3d(40vw,100vh,0) scale(1);
-  position: relative;
+  position: absolute;
+  top: 120vh;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  /* transform: translate3d(40vw,100vh,0) scale(1);
+ position: relative; */
   animation: logoPopin 2s ease-in forwards, logoPlacement 2s 3s ease-in forwards;
 }
 
@@ -44,18 +48,18 @@ a {
   left: 0;
   right: 0;
   height: 100px;
-  background-color: rgba(0, 0, 0, 0.82);
   padding: 20px 100px;
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-end;
   align-items: center;
-  opacity: 0;
   animation: headerPopin 1s 3s ease-in forwards;
   z-index: 99;
 }
 
 .nav-list {
   display: flex;
+  opacity: 0;
+  animation: opacityFadeIn 1s 3s ease-in forwards;
 }
 .nav-item {
   font-style: normal;
@@ -138,13 +142,13 @@ a {
   .homepage-content {
     flex-direction: column-reverse;
   }
-  .desktop-only{
+  .desktop-only {
     display: none;
   }
 }
 
 @media (min-width: 769px) {
-  .mobile-only{
+  .mobile-only {
     display: none;
   }
 }
@@ -162,30 +166,37 @@ a {
 /* animation to pop logo into main page */
 @keyframes logoPopin {
   from {
-    transform: translate3d(40vw,100vh,0) scale(1);
+    top: 120vh;
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
   }
   to {
-    transform: translate3d(40vw,45vh,0) scale(2.5);
+    top: 45vh;
+    transform: translate(-50%, -50%) scale(2.5);
+    opacity: 1;
   }
 }
 
 /* animation to show header */
 @keyframes headerPopin {
   from {
-    opacity: 0;
+    background-color: transparent;
   }
   to {
-    opacity: 1;
+    background-color: rgba(0, 0, 0, 0.82);
   }
 }
 
 /* putting logo to the header */
 @keyframes logoPlacement {
   from {
-    transform: translate3d(40vw,45vh,0) scale(2.5);
+    top: 45vh;
+    transform: translate(-50%, -50%) scale(2.5);
   }
   to {
-    transform: translate3d(1vw, 0, 0) scale(1);
+    top: 50%;
+    left: 200px;
+    transform: translate(-50%, -50%) scale(1);
   }
 }
 
@@ -206,5 +217,14 @@ a {
   }
   to {
     transform: translateX(5vw);
+  }
+}
+
+@keyframes opacityFadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
   }
 }
